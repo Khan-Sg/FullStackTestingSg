@@ -14,6 +14,6 @@ public class Vowelscon {
                 cons++;
             }
         }System.out.println("Total number of vowels is : "+vol);
-        System.out.println("Total number of vowels is : "+cons);
+        System.out.println("Total number of constants is : "+cons);
     }
 }
