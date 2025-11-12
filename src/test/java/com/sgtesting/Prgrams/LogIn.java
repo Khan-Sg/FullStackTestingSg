@@ -31,4 +31,7 @@ Thread.sleep(1000);
             e.printStackTrace();
         }
     }
+
+    public static class Log {
+    }
 }
