@@ -12,7 +12,7 @@ public class Addition {
                     System.out.print(",");
                 }
             }else{
-                System.out.println("Invalid lengths ");
+                System.out.println("Array lengths are not matched so addition cannot be performed");
             }
 
         }
