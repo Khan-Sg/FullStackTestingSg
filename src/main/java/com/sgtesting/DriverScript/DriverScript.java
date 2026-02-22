@@ -1,6 +1,5 @@
 package com.sgtesting.DriverScript;
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import io.cucumber.testng.CucumberOptions;
+
 
 //@CucumberOptions(
 //        features = "src/test/resources/FeatureFiles",
@@ -8,6 +7,9 @@ import io.cucumber.testng.CucumberOptions;
 //)
 //public class DriverScript extends AbstractTestNGCucumberTests {
 //}
+
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/resources/FeatureFiles",

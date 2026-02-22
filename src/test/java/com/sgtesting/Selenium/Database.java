@@ -1,13 +1,13 @@
 package com.sgtesting.Selenium;
 import org.testng.annotations.Test;
-
+import org.testng.Assert;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Database {
-    @Test
+  @Test
     public void readRecordsFromTable()
     {
         Connection conn=null;
