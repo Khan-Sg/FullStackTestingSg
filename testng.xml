@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="D:/FullStackTestingSg">
+        <classes>
+            <class name="com.sgtesting.AppTest">
+                <methods>
+                    <include name="shouldAnswerWithTrue"/>
+                </methods>
+            </class>
+            <class name="com.sgtesting.Practise.Testng">
+                <methods>
+                    <include name="tes1"/>
+                    <include name="test2"/>
+                </methods>
+            </class>
+            <class name="com.sgtesting.Practise.WindowHandel1">
+                <methods>
+                    <include name="Windoes"/>
+                    <include name="AnothtExe"/>
+                </methods>
+            </class>
+            <class name="com.sgtesting.Selenium.Database">
+                <methods>
+                    <include name="readRecordsFromTable"/>
+                </methods>
+            </class>
+            <class name="com.sgtesting.Selenium.MouseAction">
+                <methods>
+                    <include name="dragAndDrop"/>
+                    <include name="clickCard"/>
+                </methods>
+            </class>
+            <class name="com.sgtesting.Selenium.getAllfromOptions">
+                <methods>
+                    <include name="selectDropdown"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

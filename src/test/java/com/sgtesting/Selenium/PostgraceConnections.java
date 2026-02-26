@@ -19,8 +19,9 @@ public class PostgraceConnections{
     public static void main(String[] args) {
         // PostgreSQL connection parameters
         String url = "jdbc:postgresql://localhost:5432/gentechDB"; // your database name
-        String user = "SGtesting";  // your DB username
-        String password = "SGtesting"; // your DB password
+        String user = "SgTesting";  // your DB username
+        String password = "SgTesting" +
+                ""; // your DB password
 
         try {
             // Establish connection
