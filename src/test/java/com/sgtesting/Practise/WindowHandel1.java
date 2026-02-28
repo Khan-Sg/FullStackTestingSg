@@ -1,11 +1,14 @@
 package com.sgtesting.Practise;
 
+import com.sgtesting.Assertion;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -16,7 +19,7 @@ import java.util.Set;
 public class WindowHandel1 {
     public WebDriver driver = null;
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     private void Windoes() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -38,7 +41,7 @@ public class WindowHandel1 {
         driver.quit();
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     private void AnothtExe() {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -64,7 +67,7 @@ public class WindowHandel1 {
         driver.quit();
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     private void Links() {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -77,7 +80,7 @@ public class WindowHandel1 {
         driver.quit();
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     private void AllBroken() {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -103,6 +106,73 @@ try{
 } catch (Exception e) {
     System.out.println("exception"+e.getMessage());
 }
+        }
+    }
+    @Test(enabled = true)
+    private void Assertion()
+    {
+     WebDriver driver=new ChromeDriver();
+     driver.manage().window().maximize();
+     driver.get("https://www.flipkart.com");
+     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+     try{
+         String expected1="Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!";
+         String actual1=driver.getTitle();
+
+         SoftAssert soft=new SoftAssert();
+         soft.assertEquals(expected1,actual1,"matched");
+       String expected="Online hopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!";
+       String actual=driver.getTitle();
+ Assert.assertEquals(expected,actual,"matched");
+
+     } catch (Exception e) {
+         e.printStackTrace();
+     }
+
+    }
+    @Test(enabled = false)
+    private void factorial(){
+        int n=5,fact=1;
+        for (int i=1;i<=n;i++){
+            fact=fact*i;
+        }System.out.print(fact);
+    }
+    @Test(enabled = false)
+    private  void Fibonacci(){
+        int f=0,s=1,num=9;
+        System.out.print(f+","+s);
+        for(int i=2;i<=num;i++){
+            int t=f+s;
+            f=s;
+            s=t;
+            System.out.print(","+t);
+        }
+    }
+    @Test(enabled = true)
+    private static void Links1(){
+        WebDriver driver=new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://www.google.com");
+        List<WebElement> link=driver.findElements(By.tagName("a"));
+        for(WebElement links:link){
+//            System.out.println(links.getText()+"--->"+links.getAttribute("href"));
+            String url=links.getAttribute("href");
+            if(url==null||url.isEmpty()){
+                System.out.println("Empty link");
+            }
+            try{
+             HttpURLConnection conn=(HttpURLConnection) new URL(url).openConnection();
+             conn.setRequestMethod("HEAD");
+             conn.connect();
+             int response= conn.getResponseCode();
+             if(response>=400){
+                 System.out.println(url+"Invalid Link"+response);
+             }else{
+                 System.out.println(url+"Valid Link"+response);
+             }
+            } catch (Exception e) {
+                System.out.println("Broken link"+e.getMessage());
+            }
         }
     }
 }
