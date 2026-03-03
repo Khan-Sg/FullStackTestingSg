@@ -12,5 +12,4 @@ Feature: Login And Logout Functionality
        When I click on logout link
        Then I find the login page after logout
         And I logout the browser
-
-
+        And I logout the browser
