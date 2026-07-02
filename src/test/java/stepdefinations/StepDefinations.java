@@ -1,17 +1,17 @@
 package stepdefinations;
 
 import com.sgtesting.pageobjectmodel.ActiTimePager;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.And;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
@@ -21,8 +21,9 @@ public class StepDefinations {
     public static WebDriver oBrowser = null;
     public static ActiTimePager oAct = null;
 
-    @Given("^I Launch chrome Browser$")
-    public void I_Launch_chrome_Browser() {
+
+@Given("^I Launch chrome Browser$")
+public void I_Launch_chrome_Browser() {
         try {
 
             oBrowser = new ChromeDriver();
