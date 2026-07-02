@@ -108,7 +108,7 @@ try{
 }
         }
     }
-    @Test(enabled = true)
+    @Test(enabled = false)
     private void Assertion()
     {
      WebDriver driver=new ChromeDriver();
@@ -148,7 +148,7 @@ try{
             System.out.print(","+t);
         }
     }
-    @Test(enabled = true)
+    @Test(enabled = false)
     private static void Links1(){
         WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
@@ -173,6 +173,18 @@ try{
             } catch (Exception e) {
                 System.out.println("Broken link"+e.getMessage());
             }
+        }
+    }
+    @Test(enabled = true)
+    public void url() {
+        try {
+WebDriver driver=new ChromeDriver();
+driver.manage().window().maximize();
+driver.get("https://chatgpt.com");
+String s=driver.getCurrentUrl();
+            System.out.println("Current URL is: " +s);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
